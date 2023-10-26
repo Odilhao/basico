@@ -15,8 +15,13 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+
+jobs:
+
+  hello:
+
+    runs-on: ubuntu:latest
+
+    steps:
+      - name: hello-world
+        run: echo ${{ inputs.who-to-greet  }}
