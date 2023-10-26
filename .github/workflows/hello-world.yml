@@ -6,15 +6,6 @@ on:
   pull_request:
     branches: ["main"]
 
-inputs:
-  who-to-greet: # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-
 jobs:
 
   hello:
@@ -23,4 +14,4 @@ jobs:
 
     steps:
       - name: hello-world
-        run: echo ${{ inputs.who-to-greet  }}
+        run: echo "Hello World"
